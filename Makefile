@@ -18,7 +18,7 @@ Changed wm8960.dtbo:
 install: snd-soc-wm8960.ko wm8960.dtbo
 	cp snd-soc-wm8960.ko /lib/modules/$(shell uname -r)/kernel/sound/soc/codecs/
 	depmod -a
-	cp wm8960.dtbo /boot/overlays/
+	cp wm8960.dtbo /boot/overlay-user/
 	sed /boot/armbianEnv.txt -i -e "s/^#dtparam=i2c_arm=on/dtparam=i2c_arm=on/"
 	grep -q -E "^dtparam=i2c_arm=on" /boot/armbianEnv.txt || printf "dtparam=i2c_arm=on\n" >> /boot/armbianEnv.txt
 	sed /boot/armbianEnv.txt -i -e "s/^#dtoverlay=i2s-mmap/dtoverlay=i2s-mmap/"
