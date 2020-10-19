@@ -12,7 +12,7 @@ all:
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) clean
 
-tagtagtag-ears.dtbo:
+Changed wm8960.dtbo:
 	dtc -I dts -O dtb -o wm8960.dtbo wm8960-overlay.dts
 
 install: snd-soc-wm8960.ko wm8960.dtbo
